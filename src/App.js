@@ -1,6 +1,8 @@
 import React from 'react';
 import Context from './Context';
 import dummyStore from './dummyStore';
+import { Route } from 'react-router-dom'
+import NoteList from './NoteList/NoteList';
 import './App.css';
 
 
@@ -34,10 +36,44 @@ class App extends React.Component {
   }
 
   // Routes
-  
-  render() {
+  renderMainRoute() {
+    
     return (
-      <div>Hello</div>
+    <>
+    <Route
+      exact
+      path='/'
+      key='/'
+      component={NoteList} />
+
+    <Route
+      exact
+      path='/folder/:folderId'
+      key='/folder/:folderId'
+      component={NoteList} />
+
+    <Route
+      exact
+      path='/note/:noteId'
+      key='/note/:noteId'
+      component={NoteList} />
+    
+    </>
+    )}
+
+  render() {
+    const value = {
+      notes: this.state.notes,
+      folders: this.state.folders
+    }
+    
+    return (
+    <Context.Provider value={value}>
+      <div className="App">
+        {this.renderMainRoute()}
+        
+      </div>
+      </Context.Provider>
     )
   }
 }
