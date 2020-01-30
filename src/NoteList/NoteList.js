@@ -31,7 +31,7 @@ class NoteList extends React.Component {
         : notes.filter(n => n.folderId === folderId).map((note, i) => <Note key={i} 
                                         name={note.name}
                                         modified={note.modified}
-                                        content={note.content}/>)
+                                        />)
         return (
             noteList
         )

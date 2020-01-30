@@ -13,6 +13,7 @@ class Note extends React.Component {
             <div>
             <div>{name}</div>
             <div>{modified}</div>
+            {content && <div>{content}</div>}
             
             </div>
         )

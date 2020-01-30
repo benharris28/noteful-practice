@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Note Component renders note given props 1`] = `
+<div>
+  <div>
+    test note
+  </div>
+  <div>
+    2020-01-30
+  </div>
+</div>
+`;
